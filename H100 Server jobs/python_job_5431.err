@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/swati_resnet_eval.py", line 8, in <module>
+    model.eval()
+AttributeError: 'dict' object has no attribute 'eval'

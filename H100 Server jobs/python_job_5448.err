@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/swati_resnet_eval.py", line 177, in <module>
+    transformed_features_pca = pca.fit_transform(features)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/sklearn/utils/_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/sklearn/base.py", line 1152, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/sklearn/decomposition/_pca.py", line 460, in fit_transform
+    U, S, Vt = self._fit(X)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/sklearn/decomposition/_pca.py", line 510, in _fit
+    return self._fit_full(X, n_components)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/sklearn/decomposition/_pca.py", line 524, in _fit_full
+    raise ValueError(
+ValueError: n_components=2 must be between 0 and min(n_samples, n_features)=1 with svd_solver='full'

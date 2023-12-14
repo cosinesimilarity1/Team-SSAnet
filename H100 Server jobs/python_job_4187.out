@@ -1,0 +1,142 @@
+Tuning Logistic Regression...
+best params for Logistic Regression: {'C': 10}
+Score baed on best Params for Logistic Regression: 0.7621537645409419
+Validation Accuracy of Logistic Regression: 0.7600030312215823
+
+Validation Classification Report of Logistic Regression:
+              precision    recall  f1-score   support
+
+           0       0.81      0.30      0.44      1650
+           1       0.91      0.91      0.91      8150
+           2       0.44      0.80      0.57      2154
+           3       0.68      0.29      0.41      1242
+
+    accuracy                           0.76     13196
+   macro avg       0.71      0.58      0.58     13196
+weighted avg       0.80      0.76      0.75     13196
+
+
+Validation Confusion Matrix of Logistic Regression:
+[[ 502  105  899  144]
+ [  24 7435  683    8]
+ [  40  370 1727   17]
+ [  57  218  602  365]]
+
+Tuning KNN...
+best params for KNN: {'n_neighbors': 7}
+Score baed on best Params for KNN: 0.7534007805691334
+Validation Accuracy of KNN: 0.7515156107911488
+
+Validation Classification Report of KNN:
+              precision    recall  f1-score   support
+
+           0       0.47      0.51      0.49      1650
+           1       0.94      0.91      0.92      8150
+           2       0.48      0.56      0.52      2154
+           3       0.49      0.37      0.42      1242
+
+    accuracy                           0.75     13196
+   macro avg       0.59      0.59      0.59     13196
+weighted avg       0.76      0.75      0.75     13196
+
+
+Validation Confusion Matrix of KNN:
+[[ 843  115  489  203]
+ [ 209 7400  451   90]
+ [ 480  276 1214  184]
+ [ 270  112  400  460]]
+
+Tuning Decision Tree...
+best params for Decision Tree: {'max_depth': 7}
+Score baed on best Params for Decision Tree: 0.7748853775908454
+Validation Accuracy of Decision Tree: 0.7728099424067899
+
+Validation Classification Report of Decision Tree:
+              precision    recall  f1-score   support
+
+           0       0.87      0.31      0.45      1650
+           1       0.99      0.89      0.94      8150
+           2       0.44      0.97      0.60      2154
+           3       0.71      0.28      0.40      1242
+
+    accuracy                           0.77     13196
+   macro avg       0.75      0.61      0.60     13196
+weighted avg       0.86      0.77      0.77     13196
+
+
+Validation Confusion Matrix of Decision Tree:
+[[ 507    3 1014  126]
+ [   4 7251  889    6]
+ [  18   35 2093    8]
+ [  56   27  812  347]]
+
+Tuning SVM...
+best params for SVM: {'C': 1, 'kernel': 'rbf'}
+Score baed on best Params for SVM: 0.7743359478610131
+Validation Accuracy of SVM: 0.7706123067596241
+
+Validation Classification Report of SVM:
+              precision    recall  f1-score   support
+
+           0       0.88      0.29      0.44      1650
+           1       1.00      0.88      0.94      8150
+           2       0.43      0.98      0.60      2154
+           3       0.69      0.31      0.42      1242
+
+    accuracy                           0.77     13196
+   macro avg       0.75      0.62      0.60     13196
+weighted avg       0.86      0.77      0.77     13196
+
+
+Validation Confusion Matrix of SVM:
+[[ 481    0 1008  161]
+ [   8 7200  938    4]
+ [  33    6 2106    9]
+ [  25    2  833  382]]
+
+Tuning Gradient Boosting...
+best params for Gradient Boosting: {'learning_rate': 0.1, 'n_estimators': 100}
+Score baed on best Params for Gradient Boosting: 0.780569133416695
+Validation Accuracy of Gradient Boosting: 0.7710669899969688
+
+Validation Classification Report of Gradient Boosting:
+              precision    recall  f1-score   support
+
+           0       0.56      0.51      0.53      1650
+           1       0.98      0.90      0.94      8150
+           2       0.46      0.76      0.57      2154
+           3       0.63      0.32      0.42      1242
+
+    accuracy                           0.77     13196
+   macro avg       0.66      0.62      0.61     13196
+weighted avg       0.81      0.77      0.78     13196
+
+
+Validation Confusion Matrix of Gradient Boosting:
+[[ 843   16  661  130]
+ [ 138 7300  681   31]
+ [ 345  104 1639   66]
+ [ 187   43  619  393]]
+
+Evaluating the best model (Decision Tree) on test data...
+Test Accuracy of Decision Tree: 0.7738371299959078
+
+Test Classification Report of Decision Tree:
+              precision    recall  f1-score   support
+
+           0       0.88      0.30      0.45       917
+           1       0.99      0.89      0.94      4527
+           2       0.44      0.97      0.60      1197
+           3       0.71      0.32      0.44       690
+
+    accuracy                           0.77      7331
+   macro avg       0.75      0.62      0.61      7331
+weighted avg       0.86      0.77      0.77      7331
+
+
+Test Confusion Matrix of Decision Tree:
+[[ 274    2  563   78]
+ [   3 4021  500    3]
+ [   9   23 1156    9]
+ [  25    9  434  222]]
+

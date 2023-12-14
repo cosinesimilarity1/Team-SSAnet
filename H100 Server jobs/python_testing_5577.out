@@ -1,0 +1,118 @@
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+testloader: 7331
+LOADING THE BEST PERFORMING RESNET50 MODEL FOR EVALUATION ON TEST DATASET from following path:
+/local/scratch/shared-directories/ssanet/SCRIPTS/models_sample/best_model_16.pt
+******************************************************************************
+################################## TESTING ##################################
+******************************************************************************
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+1100
+1200
+1300
+1400
+1500
+1600
+1700
+1800
+1900
+2000
+2100
+2200
+2300
+2400
+2500
+2600
+2700
+2800
+2900
+3000
+3100
+3200
+3300
+3400
+3500
+3600
+3700
+3800
+3900
+4000
+4100
+4200
+4300
+4400
+4500
+4600
+4700
+4800
+4900
+5000
+5100
+5200
+5300
+5400
+5500
+5600
+5700
+5800
+5900
+6000
+6100
+6200
+6300
+6400
+6500
+6600
+6700
+6800
+6900
+7000
+7100
+7200
+7300
+TIME TAKEN: 2887.596534013748
+y_true: [3 0 3 ... 3 2 3]
+y_pred_probs: [[0.04787412 0.01149225 0.00289894 0.9377347 ]
+ [0.03214312 0.06201457 0.01806666 0.88777566]
+ [0.04234469 0.00668262 0.00105824 0.94991446]
+ ...
+ [0.04572328 0.58264875 0.07972208 0.29190588]
+ [0.01799878 0.22703706 0.1497567  0.6052074 ]
+ [0.01790814 0.0070717  0.00204344 0.9729767 ]]
+Accuracy: 0.6522984586004638
+F1 micro: 0.6522984586004638
+F1 macro: 0.3300125652021436
+F2 micro: 0.6522984586004638
+F2 macro: 0.3240224628456634
+Precision: 0.45801259839051106
+Recall: 0.33211950013622815
+ROC_AUC: 0.7206940749430936

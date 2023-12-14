@@ -1,0 +1,77 @@
+/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/transformerRes.py", line 244, in <module>
+    mp.spawn(mp_fn,
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 246, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 202, in start_processes
+    while not context.join():
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 163, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/multiprocessing/spawn.py", line 74, in _wrap
+    fn(i, *args)
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/transformerRes.py", line 121, in mp_fn
+    tr_parent = GenericDataset(csvTrain, trainTransform, resnet_extractor)
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/dataloaderfintf.py", line 36, in __init__
+    self.data_df = pd.read_csv(csv)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 617, in _read
+    return parser.read(nrows)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1748, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "parsers.pyx", line 843, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 904, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 879, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 890, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2058, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: EOF inside string starting at row 26906
+
+[2023-12-12 22:22:29,419] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 1747162) of binary: /local/scratch/shared-directories/ssanet/mlembed/bin/python
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/local/scratch/shared-directories/ssanet/SCRIPTS/transformerRes.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-12-12_22:22:29
+  host      : h100server.mathcs.emory.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1747162)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

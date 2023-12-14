@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/swati_resnet_eval.py", line 113, in <module>
+    output = model(image_tensor)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torchvision/models/resnet.py", line 268, in _forward_impl
+    x = self.conv1(x)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 3, 7, 7], expected input[1, 1, 224, 224] to have 3 channels, but got 1 channels instead

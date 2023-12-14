@@ -1,0 +1,53 @@
+/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/utils/data/dataloader.py:557: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Traceback (most recent call last):
+  File "/local/scratch/shared-directories/ssanet/SCRIPTS/main_training_sample.py", line 86, in <module>
+    model_resnet50 = DDP(model_resnet50, device_ids=[torch.cuda.current_device()])
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 734, in __init__
+    self.process_group = _get_default_group()
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 940, in _get_default_group
+    raise RuntimeError(
+RuntimeError: Default process group has not been initialized, please make sure to call init_process_group.
+[2023-12-02 20:04:42,354] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 57424) of binary: /local/scratch/shared-directories/ssanet/mlembed/bin/python
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 196, in <module>
+    main()
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 192, in main
+    launch(args)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launch.py", line 177, in launch
+    run(args)
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/local/scratch/shared-directories/ssanet/mlembed/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/local/scratch/shared-directories/ssanet/SCRIPTS/main_training_sample.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-12-02_20:04:42
+  host      : h100server.mathcs.emory.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 57424)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
